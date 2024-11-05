@@ -1,0 +1,86 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2; 
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 650px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.input-section {
+    margin-bottom: 70px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+#category_select {
+    margin-right: 20px; 
+}
+
+#amount_input {
+    margin-left: 20px; 
+}
+input[type="number"],
+input[type="text"],
+input[type="date"],
+button {
+    padding: 8px;
+    margin-right: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}

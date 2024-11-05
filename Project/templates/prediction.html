@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Loan Prediction</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+      <a href="#" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">CreditVisionary</span>
+      </a>
+      <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900" href="#" onclick="showAllSections('home')">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="#" onclick="showSection('about')">About</a>
+        <a class="mr-5 hover:text-gray-900" href="#" onclick="showSection('how-it-works')">Guide</a>
+        <a class="mr-5 hover:text-gray-900" href="#" onclick="showSection('features')">Banking</a>
+        <a class="mr-5 hover:text-gray-900" href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!---End of Header --->
+
+<!---Prediction Section--->
+
+<form class="form-horizontal" action = "/predict/" method="post">
+    <section class="text-gray-600 body-font relative">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="font-size:60px;font-family: Caliber; margin-top:-20px;">Loan Elibility Prediction</h1><br>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style="font-size:20px;">Check Your Eligibility For Getting Various Loans From Banks </p>
+        </div><br><br>
+        <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+          <div class="relative sm:mb-0 flex-grow w-full">
+            <label for="Gender" class="leading-7 text-sm text-gray-400">Gender</label>
+            <input type="text" id="Gender" name="Gender" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+          <div class="relative sm:mb-0 flex-grow w-full">
+            <label for="Married" class="leading-7 text-sm text-gray-400">Married</label>
+            <input type="text" id="Married" name="Married" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Education" class="leading-7 text-sm text-gray-400">Education</label>
+          <input type="text" id="Education" name="Education" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> 
+        <br> 
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Self_Employed" class="leading-7 text-sm text-gray-400">Self_Employed</label>
+          <input type="text" id="Self_Employed" name="Self_Employed" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>  
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="ApplicantIncome" class="leading-7 text-sm text-gray-400">ApplicantIncome</label>
+          <input type="text" id="ApplicantIncome" name="ApplicantIncome" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>  
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="CoapplicantIncome" class="leading-7 text-sm text-gray-400">CoapplicantIncome</label>
+          <input type="text" id="CoapplicantIncome" name="CoapplicantIncome" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>  
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="LoanAmount" class="leading-7 text-sm text-gray-400">LoanAmount</label>
+          <input type="text" id="LoanAmount" name="LoanAmount" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> 
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Loan_Amount_Term" class="leading-7 text-sm text-gray-400">Loan_Amount_Term</label>
+          <input type="text" id="Loan_Amount_Term" name="Loan_Amount_Term" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> 
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Credit_History" class="leading-7 text-sm text-gray-400">Credit_History</label>
+          <input type="text" id="Credit_History" name="Credit_History" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> 
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Property_Area" class="leading-7 text-sm text-gray-400">Property_Area</label>
+          <input type="text" id="Property_Area" name="Property_Area" class="w-full bg-white-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> 
+        <div> 
+        <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict</button> 
+        </div> 
+    </section>     
+  </form>    
+
+  <div class="container px-5 py-12 mx-auto flex flex-wrap justify-center" style="margin-top:-30px;">
+    <div class="lg:w-1/2 md:w-1/2 md:pr-10 md:py-6">
+        <h1 class="text-2xl font-medium title-font mb-2 text-gray-900" style="font-size:28px;font-family: Caliber;"><b>1. Fill out the Form</b></h1>
+        <h3 class="leading-relaxed text-based">Enter the following information into the corresponding input fields:</h3><br>
+         <Gender: class="leading-relaxed text-base">
+          <b>Gender:</b> Enter '1' for Male or '0' for Female.<br>
+          <b>Married:</b> Enter '1' for Yes or '0' for No.<br>
+          <b>Education:</b> Enter '0' for Not Educated or '1' for UG or '2' for PG or <br> '3' for Below 10th or '4' for SSLC or '5' for HSC <br>
+          <b>Self Employed:</b> Enter '1' for Yes or '0' for No.<br>
+          <b>Applicant Income:</b> Enter the applicant's income.<br>
+          <b>Coapplicant Income:</b> Enter the coapplicant's income.<br>
+          <b>Loan Amount:</b> Enter the loan amount required.<br>
+          <b>Loan Amount Term:</b> Enter the loan amount term (in months).<br>
+          <b>Credit History:</b> Enter '1' for Good credit history or '0' for Bad credit history.<br>
+          <b>Property Area:</b> Enter '0' for Rural, '1' for Semiurban, or '2' for Urban.</h3>
+    </div>
+    <div class="lg:w-1/2 md:w-1/2 md:pl-10 md:py-6">
+        <h2 class="text-2xl font-medium title-font mb-2 text-gray-900" style="font-size:28px;font-family: Caliber;"><b>2. Verify and Predict</b></h2>
+        <p class="leading-relaxed text-base">Check all entered details for accuracy. Once verified, click the "Predict" button to submit your application.</p><br><br>
+        <h2 class="text-2xl font-medium title-font mb-2 text-gray-900"style="font-size:28px;font-family: Caliber;"><b>3. Displaying Results</b></h2>
+        <p class="leading-relaxed text-base">After clicking the "Predict" button, the results of your loan eligibility will be displayed based on the provided information.</p>
+    </div>
+</div>
+
+
+  
+  <!---End of Prediction--->
+
+  <!---Footer Section--->
+
+<footer class="text-gray-600 body-font" style="margin-top:-30px;">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">CreditVisionary</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 CreditVisionary 
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+  
+    <!---End of Footer--->
+    <script>
+       function clearInputFields() {
+        document.querySelectorAll('input[type="text"]').forEach(function(input) {
+            input.value = '';
+        });
+    }
+    window.onload = function() {
+        clearInputFields();
+    };
+    </script>
+
+  </body>
+  </html>
